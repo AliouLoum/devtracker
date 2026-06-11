@@ -15,7 +15,8 @@ export const useSocketStore = create<SocketState>((set, get) => ({
     const currentSocket = get().socket;
     if (currentSocket) return;
 
-    const socket = io('/', {
+    const socketUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : '/';
+    const socket = io(socketUrl, {
       auth: { token },
       path: '/socket.io',
       transports: ['websocket'],
