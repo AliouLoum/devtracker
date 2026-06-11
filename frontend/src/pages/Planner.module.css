@@ -1,0 +1,57 @@
+.plannerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.viewControls {
+  display: flex;
+  gap: var(--spacing-2);
+  background-color: var(--bg-surface);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-default);
+}
+
+.viewButton {
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.viewButton.active {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.plannerContent {
+  flex: 1;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}

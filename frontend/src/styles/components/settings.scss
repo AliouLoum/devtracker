@@ -1,0 +1,147 @@
+/* ============================================================
+   DevTracker — Settings Panels & Configuration
+   ============================================================ */
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.settings-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  
+  html[data-theme='light'] & {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.settings-section-header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--spacing-3);
+  margin-bottom: var(--spacing-1);
+}
+
+.settings-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.settings-section-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Settings Toggle Rows */
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: var(--spacing-4);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .toggle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .toggle-description {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+}
+
+/* Token Counter / Statistics box */
+.settings-stats-box {
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .stats-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .stats-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
+
+/* Google Drive / Backups lists */
+.backup-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.backup-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3);
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  
+  .backup-date {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+
+  .backup-actions {
+    display: flex;
+    gap: var(--spacing-2);
+  }
+}
+
+/* Danger Zone: strict accenting styling */
+.settings-section-danger {
+  border-color: var(--color-danger);
+  
+  .settings-section-header {
+    border-bottom-color: var(--color-danger-light);
+  }
+  
+  .settings-section-title {
+    color: var(--color-danger);
+  }
+}

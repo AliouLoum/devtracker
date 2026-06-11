@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevTracker - Main Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary-container": "#c05400",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d8e2ff",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "primary": "#0058be",
+                      "inverse-primary": "#adc6ff",
+                      "tertiary-fixed-dim": "#ffb690",
+                      "primary-container": "#2170e4",
+                      "tertiary-fixed": "#ffdbca",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-tint": "#005ac2",
+                      "on-background": "#0b1c30",
+                      "surface": "#f8f9ff",
+                      "on-surface": "#0b1c30",
+                      "on-secondary-fixed": "#23005c",
+                      "background": "#f8f9ff",
+                      "surface-container": "#e5eeff",
+                      "secondary-container": "#8455ef",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-primary-container": "#fefcff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary-fixed": "#341100",
+                      "secondary-fixed": "#e9ddff",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#dce9ff",
+                      "secondary": "#6b38d4",
+                      "outline": "#727785",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "tertiary": "#994100",
+                      "on-tertiary-fixed-variant": "#783200",
+                      "on-surface-variant": "#424754",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-primary-fixed": "#001a42",
+                      "outline-variant": "#c2c6d6",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#213145"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "grid-columns": "12",
+                      "section-margin": "48px",
+                      "bento-inner-padding": "32px",
+                      "container-gap": "24px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid theme('colors.outline-variant');
+        }
+        .bento-card {
+            border-radius: 24px;
+            padding: theme('spacing.bento-inner-padding');
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+        .shadow-primary-ambient {
+            box-shadow: 0 30px 50px -15px rgba(0, 88, 190, 0.05);
+        }
+        .bento-card:hover.shadow-primary-ambient {
+            box-shadow: 0 35px 55px -10px rgba(0, 88, 190, 0.1);
+        }
+        .shadow-secondary-ambient {
+            box-shadow: 0 30px 50px -15px rgba(107, 56, 212, 0.05);
+        }
+        .bento-card:hover.shadow-secondary-ambient {
+            box-shadow: 0 35px 55px -10px rgba(107, 56, 212, 0.1);
+        }
+        .shadow-error-ambient {
+            box-shadow: 0 30px 50px -15px rgba(186, 26, 26, 0.05);
+        }
+        .bento-card:hover.shadow-error-ambient {
+            box-shadow: 0 35px 55px -10px rgba(186, 26, 26, 0.1);
+        }
+        .gauge-circle {
+            transition: stroke-dasharray 1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<aside class="bg-white/70 dark:bg-surface-container/70 backdrop-blur-xl h-screen w-64 fixed left-0 top-0 border-r border-surface-variant/30 shadow-[30px_0_50px_rgba(0,88,190,0.05)] z-40 flex flex-col h-full p-4 gap-2">
+<div class="mb-8 px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md">
+                D
+            </div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-black leading-none">DevTracker</h1>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Prism Logic v1.0</span>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<!-- Active: Home -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-inverse-primary font-bold bg-primary-container/10 rounded-xl hover:translate-x-1 hover:bg-surface-container-low transition-all duration-200 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:translate-x-1 hover:bg-surface-container-low transition-all duration-200 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+                Projects
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:translate-x-1 hover:bg-surface-container-low transition-all duration-200 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                Calendar
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:translate-x-1 hover:bg-surface-container-low transition-all duration-200 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+                AI Assistant
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors hover:translate-x-1 hover:bg-surface-container-low transition-all duration-200 ease-out active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<button class="mt-auto flex items-center justify-center gap-2 w-full py-3 bg-primary text-on-primary rounded-xl font-bold hover:bg-surface-tint hover:-translate-y-1 transition-all duration-200 ease-out shadow-[0_10px_20px_rgba(0,88,190,0.2)] active:scale-95">
+<span class="material-symbols-outlined">add</span>
+            New Project
+        </button>
+</aside>
+<!-- TopNavBar -->
+<header class="bg-white/70 dark:bg-surface-container/70 backdrop-blur-xl fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-surface-variant/30 z-30 flex justify-between items-center px-8">
+<nav class="flex items-center gap-8 h-full">
+<!-- Active: Dashboard -->
+<a class="h-full flex items-center font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:opacity-80" href="#">Dashboard</a>
+<a class="h-full flex items-center font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80" href="#">Analytics</a>
+<a class="h-full flex items-center font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80" href="#">Team</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors duration-200 active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-primary transition-colors duration-200 active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtHNGjS49z4DfIqigBBe3zRdC1RoYsRxHIgTCdpw8NKLH8sQONJ9th4wsQ23F1ktSO2EZE83bmXweu9Rn4V3CVdJg7EA_cVGpvI0HZIpsGOf-Y4bzIXBJ83paHOy7O9O1YAZogJuSX-qRtN87aMwiX3ImIWVNT-0ONrDAAvLhPH6ROcXrrrHlB4SIbuSIrDe1MAil5TKmuFx1V-7WYcdV86N45YbsN-ePFHTW9lFZ4VsAIWNCZsK1xY-4TGJk6UIVDFFFgI8iqrySY"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 mt-16 p-section-margin overflow-y-auto w-full h-[calc(100vh-4rem)]">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-container-gap max-w-7xl mx-auto">
+<!-- High-Level Stats -->
+<!-- Active Projects -->
+<div class="col-span-4 glass-panel bento-card shadow-primary-ambient border-t-4 border-t-primary flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">Active Projects</h3>
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">3</div>
+</div>
+<!-- Tasks Today -->
+<div class="col-span-4 glass-panel bento-card shadow-secondary-ambient border-t-4 border-t-secondary flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">Tasks Today</h3>
+<div class="w-10 h-10 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">5</div>
+</div>
+<!-- Delayed Tasks -->
+<div class="col-span-4 glass-panel bento-card shadow-error-ambient border-t-4 border-t-error flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">Delayed Tasks</h3>
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">warning</span>
+</div>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">1</div>
+</div>
+<!-- Central Widget: Overall Progress -->
+<div class="col-span-7 glass-panel bento-card shadow-primary-ambient border-t-4 border-t-primary min-h-[360px] flex flex-col relative overflow-hidden">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 z-10">Overall Progress</h2>
+<div class="flex-1 flex items-center justify-center relative z-10">
+<div class="relative w-48 h-48">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background circle -->
+<circle class="text-surface-variant/50" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress circle (75%) -->
+<circle class="text-primary gauge-circle" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="188.4 251.2" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg text-on-surface leading-none tracking-tight">75<span class="text-2xl">%</span></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Completion</span>
+</div>
+</div>
+</div>
+<!-- Decorative Background Blur -->
+<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl z-0"></div>
+</div>
+<!-- Side Widgets Column -->
+<div class="col-span-5 flex flex-col gap-container-gap">
+<!-- Upcoming Deadlines -->
+<div class="glass-panel bento-card shadow-primary-ambient flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Upcoming Deadlines</h3>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start justify-between p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">API Gateway Migration</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Today, 5:00 PM</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-error-container/20 text-error font-label-caps text-label-caps">High</span>
+</li>
+<li class="flex items-start justify-between p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Database Indexing</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Tomorrow, 10:00 AM</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container font-label-caps text-label-caps">Medium</span>
+</li>
+<li class="flex items-start justify-between p-3 rounded-xl bg-surface hover:bg-surface-container-low transition-colors border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Update Dependencies</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-1">Friday, 3:00 PM</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary font-label-caps text-label-caps">Low</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Recent Activity / Commits (Full Width Bottom) -->
+<div class="col-span-12 glass-panel bento-card shadow-primary-ambient">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Recent Activity</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-[#0F172A] p-4 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">commit</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-white/90">Merge pull request #142 from dev/feature-auth</p>
+<p class="font-data-mono text-data-mono text-white/50 mt-1">a1b2c3d • 2 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-[#0F172A] p-4 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">commit</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-white/90">Fix JWT token expiration bug in middleware</p>
+<p class="font-data-mono text-data-mono text-white/50 mt-1">f8e7d6c • 4 hours ago</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-[#0F172A] p-4 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">commit</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-white/90">Update UI components for dashboard bento grid</p>
+<p class="font-data-mono text-data-mono text-white/50 mt-1">9x8y7z6 • 6 hours ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple script to animate the gauge on load
+        document.addEventListener("DOMContentLoaded", () => {
+            const gauge = document.querySelector('.gauge-circle');
+            if(gauge) {
+                // Circumference for r=40 is ~251.2
+                // Start empty
+                gauge.style.strokeDasharray = "0 251.2";
+                setTimeout(() => {
+                    // Animate to 75% (188.4)
+                    gauge.style.strokeDasharray = "188.4 251.2";
+                }, 100);
+            }
+        });
+    </script>
+</body></html>

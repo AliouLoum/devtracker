@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevTracker - Project View</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-primary-fixed": "#001a42",
+                    "secondary": "#6b38d4",
+                    "primary": "#0058be",
+                    "inverse-primary": "#adc6ff",
+                    "primary-container": "#2170e4",
+                    "on-secondary-fixed": "#23005c",
+                    "surface": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-container": "#fffbff",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-container": "#c05400",
+                    "surface-bright": "#f8f9ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#341100",
+                    "on-background": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#994100",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb690",
+                    "primary-fixed-dim": "#adc6ff",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-tint": "#005ac2",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "outline-variant": "#c2c6d6",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "on-primary-container": "#fefcff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#8455ef",
+                    "outline": "#727785",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#783200",
+                    "on-surface-variant": "#424754",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-surface": "#0b1c30",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container": "#e5eeff",
+                    "tertiary-fixed": "#ffdbca"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "grid-columns": "12",
+                    "section-margin": "48px",
+                    "bento-inner-padding": "32px",
+                    "container-gap": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "data-mono": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                    "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                    "data-mono": ["14px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-image: radial-gradient(circle at top right, rgba(107,56,212,0.03) 0%, transparent 40%), radial-gradient(circle at bottom left, rgba(0,88,190,0.03) 0%, transparent 40%); }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .spring-hover:hover {
+            transform: translateY(-4px);
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-primary/20 selection:text-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface/70 border-b border-outline-variant/30 shadow-[0_20px_50px_rgba(0,88,190,0.05)]">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-display-lg text-[24px] font-extrabold tracking-tighter text-primary">DevTracker</span>
+</div>
+<!-- Desktop Nav Items -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span> Home
+                </a>
+<a class="font-label-caps text-label-caps text-primary font-bold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span> Projects
+                </a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">calendar_today</span> Schedule
+                </a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">smart_toy</span> CI/CD
+                </a>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container-high shadow-sm cursor-pointer hover:scale-105 transition-transform duration-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up studio portrait of a young professional woman with dark hair pulled back, wearing a minimalist white shirt. The lighting is soft and even, highlighting her natural features against a clean, light grey background. The mood is approachable yet focused, fitting seamlessly into a high-end, light-mode corporate UI application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUmGH-C4unBe-zA3_Bvle1jS_LNuzhi0f-mCtKLDUt5U5yX5Qq9nixt2VMyvjf_9pDAcZ7uCqj1nZQH1GOByQJFLusIoHW59zefUJcSsPXMZRLmTOKvdljZozEwdp6DWdtXUss4y4UMraeyCjcWTME1sOBMlYXuC6QD4h1lXmmFZ4U9LTc-rqWhTznzlDUYXp6UcZ0t5Yvb_AoDWpXFU2atC9QaZ49OIcBTXip0KmQXZP_HPWRS_Ojy5jFN2kYftJiQncdlO1mv1qr"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[100px] pb-[120px] md:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mt-8">
+<div class="flex-1">
+<h1 class="font-display-lg text-display-lg text-on-background flex items-baseline gap-1">
+                    E-commerce Project
+                    <span class="text-secondary text-5xl leading-none relative top-1">.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">
+                    Revamping the core checkout flow and integrating new payment gateways for Q3 launch.
+                </p>
+</div>
+<!-- Global Progress Bar -->
+<div class="w-full md:w-72 flex flex-col gap-3 p-4 rounded-xl glass-card border border-outline-variant/30 shadow-[0_10px_30px_rgba(107,56,212,0.05)]">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-secondary">65%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-4 overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-secondary rounded-full w-[65%] shadow-[0_0_15px_rgba(107,56,212,0.6)] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-[24px]">
+<!-- Tasks Board (Spans 8 columns) -->
+<section class="lg:col-span-8 glass-card border-t-4 border-t-primary border-x border-x-outline-variant/30 border-b border-b-outline-variant/30 rounded-xl p-[32px] shadow-[0_20px_50px_rgba(0,88,190,0.05)] flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-background flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">view_kanban</span> Sprint Tasks
+                    </h2>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors shadow-sm active:scale-95 duration-200">
+                        + New Task
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+<!-- To Do Column -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">To Do (2)</span>
+</div>
+<div class="bg-surface-container/60 border border-outline-variant/20 rounded-lg p-4 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-2">Design Checkout UI</h3>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">Design</span>
+<span class="font-data-mono text-data-mono text-xs text-outline">Oct 12</span>
+</div>
+</div>
+<div class="bg-surface-container/60 border border-outline-variant/20 rounded-lg p-4 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-2">API Documentation</h3>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">Backend</span>
+<span class="font-data-mono text-data-mono text-xs text-outline">Oct 14</span>
+</div>
+</div>
+</div>
+<!-- In Progress Column -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-primary">In Progress (2)</span>
+</div>
+<div class="bg-primary/5 border border-primary/20 rounded-lg p-4 cursor-pointer hover:-translate-y-1 shadow-[0_10px_20px_rgba(0,88,190,0.05)] hover:shadow-[0_15px_30px_rgba(0,88,190,0.1)] transition-all duration-300">
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-2">Implement Stripe SDK</h3>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mb-4 line-clamp-2">Integrate the new Elements UI for smoother card data entry.</p>
+<div class="flex justify-between items-center">
+<div class="flex -space-x-2">
+<img alt="Dev" class="w-6 h-6 rounded-full border border-white" data-alt="A small circular avatar showing a male software developer with glasses, smiling slightly. The lighting is bright and modern, set against a solid pastel background, perfect for a UI dashboard component." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTsz6_78sAmOFWgS4E0edJb4dIm5nQYZGG5Xb7fhYEEESDrev3sWIqyAevQ5HQmlYiCgcBFHcVYkcp3sGlgFe2W4XwkRiSVD2OJZFHFrjmZycuO4ZWWAx_8BKxLl7o-B6YJdtZFsPTQnu3L5_n91kFFMs8jeygDvuN2PS92ey9REyOYgCbTyimNGLMsRLxLdNPdvtk3aUERsF0vcrpTdVfUo-yqgW8CWfI_1rC5rOWInBJJX_TX5IQap60ML7J-wUBS4XrAMSG51HD"/>
+</div>
+<span class="font-data-mono text-data-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">In Review</span>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 rounded-lg p-4 cursor-pointer hover:-translate-y-1 shadow-[0_10px_20px_rgba(0,88,190,0.05)] hover:shadow-[0_15px_30px_rgba(0,88,190,0.1)] transition-all duration-300">
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-2">Cart State Management</h3>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-primary bg-primary/10 px-2 py-1 rounded">Frontend</span>
+<span class="font-data-mono text-data-mono text-xs text-outline">Today</span>
+</div>
+</div>
+</div>
+<!-- Done Column -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary">Done (1)</span>
+</div>
+<div class="bg-secondary/5 border border-secondary/20 rounded-lg p-4 cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 opacity-80 hover:opacity-100">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-md text-body-md font-semibold text-on-background line-through decoration-secondary/50">User Auth Flow</h3>
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-caps text-label-caps text-secondary bg-secondary/10 px-2 py-1 rounded">Security</span>
+<span class="font-data-mono text-data-mono text-xs text-outline">Oct 10</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Commits (Spans 4 columns) -->
+<aside class="lg:col-span-4 glass-card border-t-4 border-t-secondary border-x border-x-outline-variant/30 border-b border-b-outline-variant/30 rounded-xl p-[32px] shadow-[0_20px_50px_rgba(107,56,212,0.05)] flex flex-col gap-6 spring-hover">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-background flex items-center gap-2">
+<svg aria-hidden="true" class="w-6 h-6 text-on-background" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+</svg>
+                        Activity
+                    </h2>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors">more_horiz</span>
+</div>
+<div class="flex flex-col gap-5 relative">
+<!-- Vertical Line connecting commits -->
+<div class="absolute left-[11px] top-2 bottom-2 w-px bg-outline-variant/40"></div>
+<!-- Commit Item 1 -->
+<div class="relative flex gap-4 items-start group">
+<div class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center relative z-10 border-4 border-surface shadow-sm">
+<span class="material-symbols-outlined text-[12px]">commit</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest/50 p-3 rounded-lg border border-outline-variant/20 group-hover:border-secondary/30 transition-colors">
+<p class="font-body-md text-body-md text-sm text-on-background leading-snug">Fix hydration error in cart component</p>
+<div class="flex justify-between items-center mt-2">
+<span class="font-data-mono text-data-mono text-xs text-secondary bg-secondary/10 px-1.5 py-0.5 rounded">a1b2c3d</span>
+<span class="font-label-caps text-label-caps text-[10px] text-outline">2h ago</span>
+</div>
+</div>
+</div>
+<!-- Commit Item 2 -->
+<div class="relative flex gap-4 items-start group">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center relative z-10 border-4 border-surface shadow-sm">
+<span class="material-symbols-outlined text-[12px]">commit</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest/50 p-3 rounded-lg border border-outline-variant/20 group-hover:border-primary/30 transition-colors">
+<p class="font-body-md text-body-md text-sm text-on-background leading-snug">Update Stripe webhook handlers</p>
+<div class="flex justify-between items-center mt-2">
+<span class="font-data-mono text-data-mono text-xs text-primary bg-primary/10 px-1.5 py-0.5 rounded">f9e8d7c</span>
+<span class="font-label-caps text-label-caps text-[10px] text-outline">5h ago</span>
+</div>
+</div>
+</div>
+<!-- Commit Item 3 -->
+<div class="relative flex gap-4 items-start group">
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center relative z-10 border-4 border-surface shadow-sm">
+<span class="material-symbols-outlined text-[12px]">commit</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest/50 p-3 rounded-lg border border-outline-variant/20 group-hover:border-primary/30 transition-colors">
+<p class="font-body-md text-body-md text-sm text-on-background leading-snug">Merge pull request #42 from ui-branch</p>
+<div class="flex justify-between items-center mt-2">
+<span class="font-data-mono text-data-mono text-xs text-outline bg-surface-variant px-1.5 py-0.5 rounded">b5n6m7k</span>
+<span class="font-label-caps text-label-caps text-[10px] text-outline">1d ago</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-auto w-full py-2 border border-outline-variant/40 rounded-lg font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container hover:text-on-background transition-colors">
+                    View All Commits
+                </button>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 backdrop-blur-xl rounded-t-xl bg-surface/70 border-t border-outline-variant/30 shadow-[0_-10px_40px_rgba(107,56,212,0.08)] pb-safe">
+<div class="flex justify-around items-center px-4 py-3">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full p-3 shadow-[0_0_20px_rgba(33,112,228,0.3)] scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-2xl">calendar_today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</a>
+</div>
+</nav>
+<script>
+        // Simple script to handle safe area padding for mobile nav if needed
+        if (CSS.supports('padding-bottom: env(safe-area-inset-bottom)')) {
+            document.querySelector('.pb-safe').style.paddingBottom = 'calc(env(safe-area-inset-bottom) + 12px)';
+        }
+    </script>
+</body></html>

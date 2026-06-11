@@ -1,0 +1,156 @@
+/* ============================================================
+   DevTracker — Buttons Component
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-md); /* 7px */
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast) ease;
+  white-space: nowrap;
+  user-select: none;
+  
+  svg, i, .icon {
+    width: 14px;
+    height: 14px;
+    color: currentColor;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #FFFFFF;
+
+  &:hover {
+    background: var(--color-accent-hover);
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--color-danger);
+
+  &:hover {
+    background: var(--color-danger-light);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+}
+
+/* Square Icon Buttons */
+.btn-icon {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: var(--radius-sm); /* 6px */
+  color: var(--text-tertiary);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  svg, i, .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+  }
+}
+
+/* Sizing Modifiers */
+.btn-sm {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  height: 40px;
+  padding: 0 var(--spacing-4);
+  font-size: 14px;
+}
+
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+/* Button Group / Segmented Controls */
+.btn-group {
+  display: inline-flex;
+  gap: var(--spacing-2);
+}
+
+.btn-group-segmented {
+  display: inline-flex;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-surface);
+  padding: 2px;
+
+  .btn {
+    border-radius: calc(var(--radius-md) - 2px);
+    height: 28px;
+    padding: 0 var(--spacing-3);
+    font-size: 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+
+    &:hover {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+    }
+
+    &.active {
+      background: var(--bg-selected);
+      color: var(--color-accent-text);
+      font-weight: 600;
+    }
+  }
+}

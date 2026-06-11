@@ -1,0 +1,207 @@
+%-------------------------
+% CV Aliou Loum
+% Format LaTeX
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[french]{babel}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Ajustement des marges pour aérer
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.4in}
+\addtolength{\textheight}{0.8in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Espacement des sections
+\titleformat{\section}{
+  \vspace{2pt}\bfseries\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{2pt}]
+
+\pdfgentounicode=1
+
+% Espacement augmenté dans les commandes
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{1pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{1pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{1pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% Espacement des listes
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{1pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet, itemsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Aliou Loum} \\ \vspace{3pt}
+    \small +221 77 794 57 91 $|$
+    \href{mailto:aliouloum@esp.sn}{\underline{aliouloum@esp.sn}} $|$
+    Dakar, S\'en\'egal \\ \vspace{2pt}
+    \href{https://github.com/AliouLoum}{\underline{github.com/AliouLoum}} $|$
+    \href{https://www.linkedin.com/in/aliou-loum-9016a3324}{\underline{linkedin.com/in/aliou-loum-9016a3324}}
+\end{center}
+
+\vspace{2pt}
+
+%-----------PROFIL-----------
+\section{Profil}
+\small{
+D\'eveloppeur passionn\'e par la cr\'eation d'applications modernes et performantes, avec une solide exp\'erience en
+d\'eveloppement front-end (Angular) et une app\'etence marqu\'ee pour les technologies back-end et l'intelligence artificielle.
+\'Etudiant en G\'enie Logiciel \`a l'\'Ecole Sup\'erieure Polytechnique de Dakar, j'ai acquis une exp\'erience pratique \`a travers des
+projets vari\'es allant du d\'eveloppement d'interfaces utilisateur dynamiques \`a l'int\'egration de mod\`eles de langage (LLM)
+pour des applications m\'etier. Curieux, autonome et orient\'e solutions, je cherche \`a contribuer \`a des projets innovants et \`a
+continuer de monter en comp\'etences dans un environnement stimulant.
+}
+
+\vspace{4pt}
+
+%-----------EXPÉRIENCE-----------
+\section{Exp\'erience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Akilee SA}{Mai 2025 -- Juillet 2025}
+      {D\'eveloppeur Front-end (Stagiaire)}{Dakar, S\'en\'egal}
+      \resumeItemListStart
+        \resumeItem{R\'ealisation d'un dashboard de visualisation des statistiques GitLab pour usage interne}
+        \resumeItem{Technologies utilis\'ees : Angular, Nebular UI, NestJS, PostgreSQL}
+        \resumeItem{D\'eveloppement d'interfaces dynamiques avec composants Nebular}
+        \resumeItem{Cr\'eation de graphiques interactifs (AG Grid, Chart.js), authentification JWT et tests d'API avec Postman}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJETS-----------
+\section{Projets}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Plateforme de Ticketing -- S\'en\'egal} $|$ \emph{(en cours)} $|$ \textit{Angular}}{}
+          \resumeItemListStart
+            \resumeItem{D\'eveloppement front-end d'une plateforme de vente de tickets en ligne pour le march\'e s\'en\'egalais}
+            \resumeItem{Conception d'interfaces utilisateur responsive avec Angular}
+            \resumeItem{Impl\'ementation de la navigation, des formulaires d'achat et de l'affichage des \'ev\'enements}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Infrastructure R\'eseau Compl\`ete -- Projet SMARTTECH} $|$ \textit{Ubuntu Server 24.04 LTS / Linux / Bash}}{}
+          \resumeItemListStart
+            \resumeItem{D\'eploiement d'une infrastructure r\'eseau compl\`ete : DNS (BIND9), messagerie (iRedMail / Postfix / Dovecot / Roundcube), acc\`es distant (SSH, RDP, VNC, noVNC), partage de fichiers (Samba, SFTP)}
+            \resumeItem{Application web intranet CRUD (Nginx + PHP 8.3 + MariaDB) s\'ecuris\'ee HTTPS/SSL}
+            \resumeItem{Syst\`eme de monitoring automatis\'e par scripts Bash avec alertes email via cron}
+            \resumeItem{S\'ecurisation : pare-feu UFW, Fail2ban, certificats SSL auto-sign\'es, durcissement SSH}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{TranspoBot -- Gestion de Transport Urbain avec IA} $|$ \textit{Python FastAPI / MySQL / Groq API / Llama 3.1}}{}
+          \resumeItemListStart
+            \resumeItem{Application web de gestion de transport urbain int\'egrant un assistant conversationnel IA}
+            \resumeItem{Int\'egration du mod\`ele Llama 3.1-8b-instant via l'API Groq pour la g\'en\'eration automatique de requ\^etes SQL (Text-to-SQL)}
+            \resumeItem{Backend REST API (Python FastAPI), base de donn\'ees MySQL 8.x (v\'ehicules, chauffeurs, trajets, incidents)}
+            \resumeItem{Interface de chat en langage naturel avec affichage des r\'esultats en tableau, d\'eploy\'e en ligne}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Dashboard de statistiques GitLab} $|$ \textit{Angular / Nebular UI / NestJS / PostgreSQL}}{}
+          \resumeItemListStart
+            \resumeItem{Tableau de bord complet pour la visualisation des m\'etriques GitLab}
+            \resumeItem{Interface construite avec Angular et les composants Nebular UI}
+            \resumeItem{Impl\'ementation d'authentification JWT, graphiques interactifs (AG Grid, Chart.js) et tests d'API avec Postman}
+            \resumeItem{Backend NestJS connect\'e \`a une base de donn\'ees PostgreSQL}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------COMPÉTENCES-----------
+\section{Comp\'etences}
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt]
+    \small{\item{
+     \textbf{Langages}{: HTML, CSS, JavaScript, TypeScript, PHP, Java, C, SQL, Python, Bash} \\[2pt]
+     \textbf{Frameworks}{: Angular, Nebular UI, NestJS, Node.js, React, Python FastAPI} \\[2pt]
+     \textbf{Bases de donn\'ees}{: MySQL, PostgreSQL, MariaDB} \\[2pt]
+     \textbf{Syst\`emes \& R\'eseaux}{: Linux (Ubuntu Server), SSH, DNS, Nginx, Samba, SFTP, UFW, Fail2ban} \\[2pt]
+     \textbf{Outils}{: Git, GitHub, VS Code, Postman, Microsoft Office, UML, Microsoft Project} \\[2pt]
+     \textbf{IA \& LLM}{: API Groq (Llama 3.1-8b-instant), OpenAI API, Ollama, Text-to-SQL, Prompt Engineering}
+    }}
+ \end{itemize}
+
+\vspace{2pt}
+
+%-----------FORMATION-----------
+\section{Formation}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\'Ecole Sup\'erieure Polytechnique de Dakar}{2025 -- 2026}
+      {Licence 3 -- G\'enie Logiciel et Syst\`emes d'Information (GLSI)}{Dakar, S\'en\'egal}
+      
+    \resumeSubheading
+      {\'Ecole Sup\'erieure Polytechnique de Dakar}{2023 -- 2025}
+      {Dipl\^ome Sup\'erieur de Technologie en Informatique (DST)}{Dakar, S\'en\'egal}
+      
+    \resumeSubheading
+      {Lyc\'ee Camp Marchand}{2023}
+      {Baccalaur\'eat Scientifique -- S\'erie S2, Mention Assez Bien}{Rufisque, S\'en\'egal}
+  \resumeSubHeadingListEnd
+
+\vspace{2pt}
+
+%-----------COMPÉTENCES PERSONNELLES-----------
+\section{Comp\'etences Personnelles}
+\small{Esprit d'\'equipe -- Sens de l'organisation -- Capacit\'e d'analyse -- Communication claire -- Apprentissage rapide -- Autonomie}
+
+\vspace{4pt}
+
+%-----------LANGUES-----------
+\section{Langues}
+\small{\textbf{Fran\c{c}ais :} Courant \quad $|$ \quad \textbf{Anglais :} Niveau interm\'ediaire}
+
+\vspace{4pt}
+
+%-----------CENTRES D'INTÉRÊT-----------
+\section{Centres d'int\'er\^et}
+\small{Technologie et innovation -- G\'eopolitique -- Football}
+
+\end{document}

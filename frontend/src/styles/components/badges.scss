@@ -1,0 +1,106 @@
+/* ============================================================
+   DevTracker — Badges & Status Pills
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  line-height: 1;
+  white-space: nowrap;
+  border: none;
+}
+
+/* Priority Badges */
+.badge-priority-high {
+  background-color: var(--priority-high-light);
+  color: var(--priority-high);
+}
+
+.badge-priority-med {
+  background-color: var(--priority-med-light);
+  color: var(--priority-med);
+}
+
+.badge-priority-low {
+  background-color: var(--priority-low-light);
+  color: var(--priority-low);
+}
+
+/* Status Badges */
+.badge-status-todo {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.badge-status-done {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.badge-status-in-progress {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+}
+
+/* Github Committed Badge */
+.badge-committed {
+  background-color: var(--bg-hover);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default) !important;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+/* Accent Badge */
+.badge-accent {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+}
+
+/* Dot Badge Indicators */
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.badge-dot-success {
+  background-color: var(--color-success);
+}
+
+.badge-dot-warning {
+  background-color: var(--color-warning);
+}
+
+.badge-dot-danger {
+  background-color: var(--color-danger);
+}
+
+.badge-dot-accent {
+  background-color: var(--color-accent);
+}
+
+/* Count Badge for Lists/Nav */
+.badge-count {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

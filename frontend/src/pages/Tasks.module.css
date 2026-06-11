@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeIn var(--transition-normal);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  color: var(--text-secondary);
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.taskRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-md);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.taskRow:hover {
+  transform: translateX(4px);
+  border-color: var(--border-focus);
+}
+
+.taskStatus {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskContent {
+  flex: 1;
+}
+
+.taskContent h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.taskContent p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.doneText {
+  text-decoration: line-through;
+  color: var(--text-muted) !important;
+}
+
+.taskMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background: var(--bg-glass);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.emptyState h3 {
+  margin-top: 1rem;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.loading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,150 @@
+/* ============================================================
+   DevTracker — Planner Views (Weekly & Daily Time Blocking)
+   ============================================================ */
+
+/* Weekly View */
+.planner-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: var(--border-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.planner-week-column {
+  background-color: var(--bg-surface);
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-3);
+  gap: var(--spacing-2);
+  
+  &.today {
+    background-color: var(--bg-selected);
+    
+    .planner-week-header-date {
+      color: var(--color-accent);
+      background-color: var(--color-accent-light);
+    }
+  }
+}
+
+.planner-week-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--spacing-3);
+  text-align: center;
+}
+
+.planner-week-header-day {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.planner-week-header-date {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--transition-fast) ease;
+}
+
+/* Weekly Task block */
+.planner-week-task {
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: grab;
+  transition: transform 120ms ease, border-color 120ms ease;
+  user-select: none;
+  
+  &:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+/* Daily View Time Blocking (7:00 - 22:00) */
+.planner-day-timeline {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--bg-surface);
+}
+
+.planner-time-slot {
+  display: flex;
+  min-height: 60px;
+  border-bottom: 1px solid var(--border-subtle);
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.planner-time-label {
+  width: 70px;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-right: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-align: right;
+  background-color: var(--bg-base);
+  opacity: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.planner-time-content {
+  flex: 1;
+  padding: 6px;
+  position: relative;
+  background-color: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Hourly Blocked Task: bg-selected, left blue accent border */
+.planner-time-task {
+  background-color: var(--bg-selected);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: 13px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+  transition: transform var(--transition-fast) ease;
+  
+  &:hover {
+    transform: translateX(2px);
+  }
+}

@@ -1,0 +1,114 @@
+/* ============================================================
+   DevTracker — Variables System (Light & Dark Themes)
+   ============================================================ */
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  /* Layout dimensions */
+  --sidebar-width: 240px;
+  --content-max-width: 1000px;
+  --content-padding: 40px;
+  --content-padding-top: 32px;
+
+  /* Spacing system based on 4px grid */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+
+  /* Micro-interactions & Transitions */
+  --transition-fast: 120ms ease;
+  --transition-normal: 150ms ease;
+  --transition-slow: 200ms ease;
+
+  /* Light Theme Specific Colors — Off-white base */
+  --bg-base: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --bg-hover: #F1F3F5;
+  --bg-selected: #E8F0FE;
+
+  --text-primary: #0D1117;
+  --text-secondary: #57606A;
+  --text-tertiary: #8C959F;
+
+  --border-subtle: #EAEDF0;
+  --border-default: #D8DEE4;
+  --border-strong: #B8C0CC;
+
+  /* Accent Blue */
+  --color-accent: #2563EB;
+  --color-accent-light: #EFF6FF;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-text: #1E40AF;
+
+  /* Status Colors */
+  --color-success: #16A34A;
+  --color-success-light: #F0FDF4;
+  --color-warning: #D97706;
+  --color-warning-light: #FFFBEB;
+  --color-danger: #DC2626;
+  --color-danger-light: #FEF2F2;
+
+  /* Priority Colors */
+  --priority-high: #DC2626;
+  --priority-high-light: #FEF2F2;
+  --priority-med: #D97706;
+  --priority-med-light: #FFFBEB;
+  --priority-low: #16A34A;
+  --priority-low-light: #F0FDF4;
+}
+
+/* Dark Theme Specific Colors — Soft Night Blue */
+html[data-theme='dark'] {
+  --bg-base: #0D1117;
+  --bg-surface: #161B22;
+  --bg-elevated: #1C2128;
+  --bg-hover: #21262D;
+  --bg-selected: #1C2A3F;
+
+  --text-primary: #E6EDF3;
+  --text-secondary: #7D8590;
+  --text-tertiary: #484F58;
+
+  --border-subtle: #21262D;
+  --border-default: #30363D;
+  --border-strong: #484F58;
+
+  /* Accent Blue — adapted for dark visibility */
+  --color-accent: #2563EB;
+  --color-accent-light: #1C2A3F;
+  --color-accent-hover: #3B82F6;
+  --color-accent-text: #60A5FA;
+
+  /* Status Colors for Dark */
+  --color-success: #22C55E;
+  --color-success-light: #052E16;
+  --color-warning: #F59E0B;
+  --color-warning-light: #1C1400;
+  --color-danger: #EF4444;
+  --color-danger-light: #2D0A0A;
+
+  /* Priority Colors for Dark */
+  --priority-high: #EF4444;
+  --priority-high-light: #2D0A0A;
+  --priority-med: #F59E0B;
+  --priority-med-light: #1C1400;
+  --priority-low: #22C55E;
+  --priority-low-light: #052E16;
+}

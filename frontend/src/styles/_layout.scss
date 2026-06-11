@@ -1,0 +1,97 @@
+/* ============================================================
+   DevTracker — Layout & Page Architecture
+   ============================================================ */
+
+/* Global Transitions */
+* {
+  transition: background-color var(--transition-slow) ease,
+              border-color var(--transition-fast) ease,
+              color var(--transition-slow) ease;
+}
+
+/* Reset and base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-base);
+  overflow: hidden;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-base);
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--content-padding-top) var(--content-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Common Layout Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 900px) {
+  .grid-cols-4, .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-cols-4, .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page Header component spacing */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-6);
+  
+  .page-title {
+    margin: 0;
+  }
+}
