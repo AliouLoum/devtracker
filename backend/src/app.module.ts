@@ -41,6 +41,7 @@ import { MailModule } from './mail/mail.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
+        url: config.get<string>('DATABASE_URL'),
         host: config.get<string>('DATABASE_HOST', 'localhost'),
         port: config.get<number>('DATABASE_PORT', 5432),
         username: config.get<string>('DATABASE_USER', 'devtracker'),
