@@ -49,6 +49,12 @@ import { MailModule } from './mail/mail.module';
         database: config.get<string>('DATABASE_NAME', 'devtracker'),
         autoLoadEntities: true,
         synchronize: config.get<string>('NODE_ENV') !== 'production',
+        ssl: config.get<string>('NODE_ENV') === 'production' ? { rejectUnauthorized: false } : false,
+        extra: {
+          max: 20,
+          idleTimeoutMillis: 30000,
+          connectionTimeoutMillis: 5000,
+        },
       }),
     }),
     AuthModule,
