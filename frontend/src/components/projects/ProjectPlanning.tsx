@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Clock, CalendarDays, CheckCircle2, Circle, AlertCircle } from 'lucide-react';
+import { Clock, CalendarDays, CheckCircle2, Circle, AlertCircle, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/card';
 import { ConfirmDialog } from '../ConfirmDialog';
 import api from '../../api/axios';
